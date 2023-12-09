@@ -28,7 +28,7 @@ def createTask(request):
         if form.is_valid():
             form.save()
 
-            return HttpResponse("Your task was created")
+            return redirect('viewtasks')
     
 
     context = {'form': form}

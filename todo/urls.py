@@ -10,7 +10,7 @@ urlpatterns = [
 
     path('createtask', views.createTask),
 
-    path('viewtasks', views.ViewTasks),
+    path('viewtasks', views.ViewTasks, name='viewtasks'),
 
 
 
