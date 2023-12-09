@@ -1,0 +1,15 @@
+{% include 'base.html'%}
+
+<h2>Read all tasks</h2>
+
+<br>
+
+
+{% for task in tasks%}
+
+{{task.title}}
+<br><br>
+{{task.content}}
+<br><br><br><br>
+
+{% endfor %}

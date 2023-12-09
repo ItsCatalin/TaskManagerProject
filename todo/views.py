@@ -35,3 +35,11 @@ def createTask(request):
 
     return render(request, 'createtask.html', context=context)
 
+
+def ViewTasks(request):
+
+    tasks = Task.objects.all()
+    
+    context = {'tasks': tasks}
+
+    return render(request, 'viewtasks.html', context=context)
