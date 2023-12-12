@@ -4,14 +4,20 @@ from . import views
 urlpatterns = [
     path('register', views.register),
     path('login', views.my_login),
-    path('home', views.home),
+    path('', views.home),
 
 
+#create tasks
+    path('createtask', views.createTask, name='createtask'),
 
-    path('createtask', views.createTask),
+#view tasks
 
     path('viewtasks', views.ViewTasks, name='viewtasks'),
 
+#update tasks
 
+    path('updatetask/<str:pk>/', views.updateTask, name='updatetask'),
 
+#Delete task
+    path('deletetask/<str:pk>/', views.deleteTask, name='deletetask'),
 ]

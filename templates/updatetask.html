@@ -1,0 +1,37 @@
+{% include 'base.html'%}
+
+<h2>Update task</h2>
+
+
+<form method="POST" autocomplete="off">
+
+    {% csrf_token %}
+
+
+    {{form.as_p}}
+
+
+    <input type="submit" value="Submit"/>
+
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

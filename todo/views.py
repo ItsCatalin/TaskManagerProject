@@ -43,3 +43,39 @@ def ViewTasks(request):
     context = {'tasks': tasks}
 
     return render(request, 'viewtasks.html', context=context)
+
+#update a task
+
+def updateTask(request, pk):
+    task = Task.objects.get(id=pk)
+    form = TaskForm(instance=task)
+
+    if request.method == "POST":
+
+        form = TaskForm(request.POST, instance=task)
+
+        if form.is_valid():
+            form.save()
+            return redirect('viewtasks')
+    
+    context = {'form': form}
+
+    return render(request, 'updatetask.html', context=context)
+
+
+#delete a task
+
+def deleteTask(request, pk):
+
+    task = Task.objects.get(id=pk)
+
+    if request.method == "POST":
+        task.delete()
+
+        return redirect('viewtasks')
+
+    contex = {"object": task}
+
+    return render(request, 'deletetask.html', context=contex)
+    
+    
