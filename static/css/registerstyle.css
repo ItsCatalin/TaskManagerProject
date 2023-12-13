@@ -1,0 +1,29 @@
+/* styles.css */
+
+/* General form styles */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Style form inputs */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style form labels */
+form label {
+    display: block;
+    margin-bottom: 6px;
+}
+
+form .form-group {
+    margin-bottom: 20px;
+}

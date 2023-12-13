@@ -1,0 +1,62 @@
+/* styles.css */
+
+/* General form styles */
+form {
+    max-width: 400px;
+    padding-top: 5cm;
+    margin: auto;
+    align-items: center;
+
+}
+
+form label {
+    display: block;
+    margin-bottom: 6px;
+    color: #555; /* Choose your desired label color */
+    font-weight: bold; /* Make the label text bold for emphasis */
+}
+
+/* Style form inputs */
+form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+
+    ::placeholder {
+        color: #999;
+    }
+}
+
+/* Change border color on input focus */
+form input[type="text"]:focus,
+form input[type="password"]:focus {
+    border-color: #007bff;
+}
+
+form .form-group {
+    margin-bottom: 20px;
+}
+
+form input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px; /* Set border-radius for a round button */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Add smooth transition */
+}
+
+/* Add a subtle shadow on hover for a lifted effect */
+form input[type="submit"]:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05); /* Add a slight scale effect on hover */
+}
+

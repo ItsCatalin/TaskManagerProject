@@ -1,3 +1,20 @@
-{% include 'base.html'%}
+{% load static %}
 
-<h2>This is our login page </h2>
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href={% static 'css/loginstyle.css' %}>
+    </head>
+
+    <form method="POST" autocomplete="off">
+
+        {% csrf_token %}
+
+
+        {{form.as_p}}
+
+
+        <input type="submit" value="Submit"/>
+
+    </form>
+</html>

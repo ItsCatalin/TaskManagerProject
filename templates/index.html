@@ -1,10 +1,57 @@
-{% include 'base.html' %}
+{% load static %}
 
-<h2> THIS IS OUR HOMEPAGE </h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    
 
-<a href='{% url 'createtask'%}'>Create a task</a>
+</head>
 
-<br><br>
+<body class="font-sans bg-gray-100">
 
-<a href='{% url 'viewtasks'%}'>View tasks</a>
+    <header class="border-b md:flex md:items-center md:justify-between p-4 pb-0 shadow-lg md:pb-4 bg-gradient-to-r from-blue-500 to-indigo-700 text-white">
+  
+        <!-- Logo text or image -->
+        <div class="flex items-center justify-between mb-4 md:mb-0">
+            <h1 class="leading-none text-2xl text-gray-100">
+                <a class="no-underline hover:text-gray-300" href="#">
+                    Task-Man
+                </a>
+            </h1>
+      
+            <a class="text-white hover:text-orange md:hidden" href="#">
+                <i class="fa fa-2x fa-bars"></i>
+            </a>
+        </div>
+      
+        <!-- Global navigation -->
+        <nav>
+            <ul class="md:flex">
+                <li class="md:ml-4">
+                    <a class="block no-underline hover:underline py-2 text-gray-100 hover:text-gray-300 md:border-none md:p-0" href="login">
+                        Login
+                    </a>
+                </li>
+                <li class="md:ml-4">
+                    <a class="block no-underline hover:underline py-2 text-gray-100 hover:text-gray-300 md:border-none md:p-0" href="register">
+                        Register
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
+
+    <div class="text-center">
+
+        <h2> Task-Man will take care of your tasks for you!</h2>
+        <br>
+
+        <a class="btn btn-autoline-primary" type="button" href="register">Register now !</a>
+
+</body>
+</html>

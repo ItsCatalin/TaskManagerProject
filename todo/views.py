@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
-from .models import Task
-from .forms import TaskForm
+from .forms import CreateUserForm
+from .forms import LoginForm
 
+from django.contrib.auth.models import auth
+from django.contrib.auth import authenticate, login
 
-
-
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -14,68 +15,65 @@ from .forms import TaskForm
 def home(request):
     return render(request, 'index.html')
 
-def register(request):
-    return render(request, 'register.html')
 
+# Registering / Creating a  user
+
+def register(request):
+
+    form = CreateUserForm()
+
+    if request.method == "POST":
+        form = CreateUserForm(request.POST) 
+        if form.is_valid():
+            form.save()   
+
+            return HttpResponse("User registration was succesful!")
+        
+    context = {'form': form}
+
+    return render(request, 'register.html', context=context)
+
+
+#Login a user
 
 def my_login(request):
-    return render(request, 'login.html')
 
-def createTask(request):
-    form = TaskForm()
-    if request.method == 'POST':
-        form = TaskForm(request.POST)
-        if form.is_valid():
-            form.save()
-
-            return redirect('viewtasks')
-    
-
-    context = {'form': form}
-
-    return render(request, 'createtask.html', context=context)
-
-
-def ViewTasks(request):
-
-    tasks = Task.objects.all()
-    
-    context = {'tasks': tasks}
-
-    return render(request, 'viewtasks.html', context=context)
-
-#update a task
-
-def updateTask(request, pk):
-    task = Task.objects.get(id=pk)
-    form = TaskForm(instance=task)
+    form = LoginForm()
 
     if request.method == "POST":
 
-        form = TaskForm(request.POST, instance=task)
+        form = LoginForm(request, data=request.POST)
 
         if form.is_valid():
-            form.save()
-            return redirect('viewtasks')
-    
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+
+            user = authenticate(request, username=username, password=password)
+
+            #Checking if the user exists in the database
+            if user is not None:
+                
+                auth.login(request, user)
+
+                return redirect("dashboard")
+            
     context = {'form': form}
 
-    return render(request, 'updatetask.html', context=context)
+    return render(request, 'login.html', context=context)
 
 
-#delete a task
 
-def deleteTask(request, pk):
+@login_required(login_url='login') #This decorator will only allow users on the dashboard page if they are logged in 
+def dashboard(request):
+    return render(request, "dashboard.html")
 
-    task = Task.objects.get(id=pk)
 
-    if request.method == "POST":
-        task.delete()
 
-        return redirect('viewtasks')
+#log out a user
+def logout(request):
 
-    contex = {"object": task}
+    auth.logout(request)
 
-    return render(request, 'deletetask.html', context=contex)
-    
+    return redirect("")
+
     

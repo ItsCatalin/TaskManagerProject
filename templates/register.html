@@ -1,1 +1,25 @@
-<h2> This is our registration page </h2>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="{% static 'css/registerstyle.css'%}">
+        
+
+    </head>
+
+    <form method="POST" autocomplete="off">
+
+        {% csrf_token %}
+
+
+        {{form.as_p}}
+
+
+        <input type="submit" value="Submit"/>
+
+
+    </form>
+</html>
