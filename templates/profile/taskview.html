@@ -1,0 +1,35 @@
+{% load static %}
+{% include 'base.html'%}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="{% static 'css/taskview.css'%}">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    </head>
+
+<body>
+        <h3> My tasks</h3>
+        <hr>
+        {% for t in task %}
+
+            <div class="container">
+
+            {{t.title}}
+            <br><br>
+            {{t.content}}
+
+            <br><br>
+
+            <a class="btn" href="{% url 'updatetask' t.id %}">Update</a>
+            <br><br>
+            <a class="btn2" href="{% url 'deletetask' t.id %}">Delete</a>
+            <br><br>
+
+            </div>
+</body>
+        {% endfor %}
+
+
+</html>

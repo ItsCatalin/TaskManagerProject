@@ -1,0 +1,34 @@
+.container{
+    text-align: center;
+    margin-top: 5cm;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.container {
+    background-color: rgba(86, 22, 214, 0.7); /* Slightly purple and transparent background */
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.container:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background-color: rgba(125, 114, 148, 0.9); /* Darker purple on hover */
+}
+
+h3 {
+    color: #000000;
+}
+
+hr {
+    border-color: #0e0f0f;
+}
+
+p {
+    color: #ecf0f1;
+}

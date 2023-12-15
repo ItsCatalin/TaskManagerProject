@@ -1,0 +1,49 @@
+
+.container {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.form-layout {
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+}
+
+form {
+    margin-top: 20px;
+}
+
+p {
+    color: #333;
+}
+
+.btn-no,
+.btn-yes {
+    display: inline-block;
+    padding: 7px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-no {
+    background-color: #e74c3c; /* Red for "No" */
+    color: #fff;
+}
+
+.btn-yes {
+    background-color: #2ecc71; /* Green for "Yes" */
+    color: #fff;
+}
+
+.btn-no:hover {
+    background-color: #c0392b; /* Darker red on hover for "No" */
+}
+
+.btn-yes:hover {
+    background-color: #27ae60; /* Darker green on hover for "Yes" */
+}

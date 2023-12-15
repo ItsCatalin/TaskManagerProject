@@ -1,3 +1,58 @@
-{% comment %} <h4> Task Manager</h4>
+{% load static %}
 
-<hr> {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        
+
+    </head>
+
+
+
+    <body class="font-sans bg-gray-100">
+
+        <header class="border-b md:flex md:items-center md:justify-between p-4 pb-0 shadow-lg md:pb-4 bg-gradient-to-r from-blue-500 to-indigo-700 text-white">
+    
+            <div class="flex items-center justify-between mb-4 md:mb-0">
+                <h1 class="leading-none text-2xl text-gray-100">
+                    <a class="no-underline hover:text-gray-300" href="dashboard">
+                        Task-Man
+                    </a>
+                </h1>
+        
+                <a class="text-white hover:text-orange md:hidden" href="">
+                    <i class="fa fa-2x fa-bars"></i>
+                </a>
+            </div>
+        
+            <nav>
+                <ul class="md:flex">
+                    <li class="md:ml-4">
+                        <a class="block no-underline hover:underline py-2 text-gray-100 hover:text-gray-300 md:border-none md:p-0" href="dashboard">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="md:ml-4">
+                        <a class="block no-underline hover:underline py-2 text-gray-100 hover:text-gray-300 md:border-none md:p-0" href="taskview">
+                            View Tasks
+                        </a>
+                    </li>
+                    <li class="md:ml-4">
+                        <a class="block no-underline hover:underline py-2 text-gray-100 hover:text-gray-300 md:border-none md:p-0" href="createtask">
+                            Create Task
+                        </a>
+                    </li>
+                    <li class="md:ml-4">
+                        <a class="block no-underline hover:underline py-2 text-gray-100 hover:text-gray-300 md:border-none md:p-0" href="logout">
+                            Log out
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+    </html>

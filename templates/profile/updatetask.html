@@ -1,0 +1,28 @@
+{% load static %}
+{% include 'base.html'%}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="{% static 'css/updatetask.css'%}">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        
+        
+
+    </head>
+<body>
+    <div class="container">
+        <h3>Update a task</h3>
+
+        <form method="POST" autocomplete="off">
+
+            {% csrf_token %}
+            {{ form.as_p}}
+
+
+            <input type="submit" value="Update"/>
+        </form>
+    </div>
+</body>
+</html>
